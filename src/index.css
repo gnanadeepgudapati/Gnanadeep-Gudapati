@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(75,76,81,0.50);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(75,76,81,0.80);
+}
+
+/* Selection */
+::selection {
+  background: rgba(75,76,81,0.30);
+  color: #EDEAE4;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #141413;
+  color: #CFCFCF;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Charcoal + white theme overrides */
+
+/* Chatbot scrollbar */
+.chatbot-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.chatbot-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.chatbot-scroll::-webkit-scrollbar-thumb {
+  background: rgba(75,76,81,0.50);
+  border-radius: 10px;
+}
+
+/* Typewriter cursor blink */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+/* Outlined hero name — warm gold stroke on dark bg */
+.hero-name-outlined {
+  -webkit-text-stroke: 2px rgba(207,207,207,0.8);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  opacity: 0.85;
+}
+
+/* 3D Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1500 {
+  perspective: 1500px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Continuous 3D Floating Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotateX(0) rotateY(0);
+  }
+  25% {
+    transform: translateY(-8px) rotateX(2deg) rotateY(1deg);
+  }
+  50% {
+    transform: translateY(0) rotateX(0) rotateY(0);
+  }
+  75% {
+    transform: translateY(8px) rotateX(-2deg) rotateY(-1deg);
+  }
+}
+
+.animate-floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-floating-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}

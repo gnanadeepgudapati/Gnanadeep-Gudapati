@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1440">
+<title>Deep Gudapati — Tech Logo Kit</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #0c0d12;
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: #B8B4AE;
+  padding: 40px;
+  line-height: 1.5;
+}
+h1 { font-size: 32px; font-weight: 900; color: #F0EDE8; letter-spacing: -1px; margin-bottom: 6px; }
+.subtitle { color: #7A7670; font-size: 14px; margin-bottom: 48px; }
+.subtitle span { color: #F59E0B; }
+
+.category { margin-bottom: 48px; }
+.cat-header {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.cat-dot { width: 8px; height: 8px; border-radius: 50%; }
+.cat-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #7A7670; }
+.cat-count { font-size: 11px; color: #4A4742; margin-left: auto; }
+
+.logo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+.logo-item {
+  background: #11121a;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 20px 12px 14px;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s;
+  position: relative;
+}
+.logo-item:hover { transform: translateY(-2px); }
+.logo-item img, .logo-item svg { width: 40px; height: 40px; object-fit: contain; }
+.logo-name { font-size: 11px; font-weight: 600; color: #B8B4AE; text-align: center; }
+.logo-file { font-size: 9px; color: #4A4742; text-align: center; font-family: monospace; }
+
+/* Category accent colors */
+.ai .logo-item:hover { border-color: rgba(245,158,11,0.35); background: rgba(245,158,11,0.04); }
+.ai .cat-dot { background: #F59E0B; }
+.ai .cat-title { color: #F59E0B; }
+
+.backend .logo-item:hover { border-color: rgba(99,102,241,0.40); background: rgba(99,102,241,0.04); }
+.backend .cat-dot { background: #6366F1; }
+.backend .cat-title { color: #818cf8; }
+
+.database .logo-item:hover { border-color: rgba(34,197,94,0.35); background: rgba(34,197,94,0.03); }
+.database .cat-dot { background: #22c55e; }
+.database .cat-title { color: #4ade80; }
+
+.devops .logo-item:hover { border-color: rgba(251,113,133,0.35); background: rgba(251,113,133,0.03); }
+.devops .cat-dot { background: #fb7185; }
+.devops .cat-title { color: #fb7185; }
+
+.dataml .logo-item:hover { border-color: rgba(34,211,238,0.35); background: rgba(34,211,238,0.03); }
+.dataml .cat-dot { background: #22d3ee; }
+.dataml .cat-title { color: #22d3ee; }
+
+.frontend .logo-item:hover { border-color: rgba(167,139,250,0.35); background: rgba(167,139,250,0.03); }
+.frontend .cat-dot { background: #a78bfa; }
+.frontend .cat-title { color: #a78bfa; }
+
+.usage-note {
+  margin-top: 48px; padding: 20px 24px;
+  background: #11121a;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+}
+.usage-note h3 { font-size: 13px; font-weight: 700; color: #F0EDE8; margin-bottom: 12px; }
+.usage-note code {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; color: #F59E0B;
+  background: rgba(245,158,11,0.06);
+  border: 1px solid rgba(245,158,11,0.15);
+  border-radius: 8px; padding: 12px 16px;
+  margin-bottom: 8px; white-space: pre;
+}
+.usage-note p { font-size: 12px; color: #7A7670; margin-top: 8px; }
+
+/* color overlay for SVGs using CSS filter - helper */
+.logo-item img { filter: brightness(1); }
+</style>
+</head>
+<body>
+
+<h1>Tech Logo Kit</h1>
+<p class="subtitle">40 logos · 6 categories · SVG format · <span>Deep Gudapati Portfolio</span></p>
+
+<!-- AI & GenAI -->
+<div class="category ai">
+  <div class="cat-header">
+    <div class="cat-dot"></div>
+    <span class="cat-title">AI & GenAI</span>
+    <span class="cat-count">8 logos</span>
+  </div>
+  <div class="logo-grid">
+    <div class="logo-item"><img src="ai-genai/openai.svg" alt="OpenAI"><div class="logo-name">OpenAI / GPT-4</div><div class="logo-file">openai.svg</div></div>
+    <div class="logo-item"><img src="ai-genai/anthropic.svg" alt="Anthropic"><div class="logo-name">Anthropic / Claude</div><div class="logo-file">anthropic.svg</div></div>
+    <div class="logo-item"><img src="ai-genai/langchain.svg" alt="LangChain"><div class="logo-name">LangChain</div><div class="logo-file">langchain.svg</div></div>
+    <div class="logo-item"><img src="ai-genai/huggingface.svg" alt="Hugging Face"><div class="logo-name">Hugging Face</div><div class="logo-file">huggingface.svg</div></div>
+    <div class="logo-item"><img src="ai-genai/spacy.svg" alt="spaCy"><div class="logo-name">spaCy / NLP</div><div class="logo-file">spacy.svg</div></div>
+    <div class="logo-item"><img src="ai-genai/milvus.svg" alt="Milvus"><div class="logo-name">Milvus</div><div class="logo-file">milvus.svg</div></div>
+    <div class="logo-item"><img src="data-ml/pinecone.svg" alt="Pinecone"><div class="logo-name">Pinecone</div><div class="logo-file">pinecone.svg</div></div>
+    <div class="logo-item">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="8" fill="#1a1a2e"/>
+        <text x="20" y="16" font-size="8" font-weight="800" text-anchor="middle" fill="#F59E0B" font-family="monospace">PROMPT</text>
+        <text x="20" y="26" font-size="8" font-weight="800" text-anchor="middle" fill="#818cf8" font-family="monospace">ENG.</text>
+        <text x="20" y="35" font-size="7" text-anchor="middle" fill="#4A4742" font-family="monospace">✦ ✦ ✦</text>
+      </svg>
+      <div class="logo-name">Prompt Engineering</div><div class="logo-file">(inline)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Backend -->
+<div class="category backend">
+  <div class="cat-header">
+    <div class="cat-dot"></div>
+    <span class="cat-title">Backend Development</span>
+    <span class="cat-count">5 logos</span>
+  </div>
+  <div class="logo-grid">
+    <div class="logo-item"><img src="backend/python.svg" alt="Python"><div class="logo-name">Python</div><div class="logo-file">python.svg</div></div>
+    <div class="logo-item"><img src="backend/fastapi.svg" alt="FastAPI"><div class="logo-name">FastAPI</div><div class="logo-file">fastapi.svg</div></div>
+    <div class="logo-item"><img src="backend/flask.svg" alt="Flask"><div class="logo-name">Flask</div><div class="logo-file">flask.svg</div></div>
+    <div class="logo-item"><img src="backend/nodejs.svg" alt="Node.js"><div class="logo-name">Node.js</div><div class="logo-file">nodejs.svg</div></div>
+    <div class="logo-item"><img src="backend/websockets.svg" alt="WebSockets"><div class="logo-name">WebSockets</div><div class="logo-file">websockets.svg</div></div>
+  </div>
+</div>
+
+<!-- Database -->
+<div class="category database">
+  <div class="cat-header">
+    <div class="cat-dot"></div>
+    <span class="cat-title">Databases</span>
+    <span class="cat-count">5 logos</span>
+  </div>
+  <div class="logo-grid">
+    <div class="logo-item"><img src="database/postgresql.svg" alt="PostgreSQL"><div class="logo-name">PostgreSQL</div><div class="logo-file">postgresql.svg</div></div>
+    <div class="logo-item"><img src="database/mongodb.svg" alt="MongoDB"><div class="logo-name">MongoDB</div><div class="logo-file">mongodb.svg</div></div>
+    <div class="logo-item"><img src="database/redis.svg" alt="Redis"><div class="logo-name">Redis</div><div class="logo-file">redis.svg</div></div>
+    <div class="logo-item"><img src="database/cassandra.svg" alt="Cassandra"><div class="logo-name">Cassandra</div><div class="logo-file">cassandra.svg</div></div>
+    <div class="logo-item"><img src="database/elasticsearch.svg" alt="Elasticsearch"><div class="logo-name">Elasticsearch</div><div class="logo-file">elasticsearch.svg</div></div>
+  </div>
+</div>
+
+<!-- DevOps -->
+<div class="category devops">
+  <div class="cat-header">
+    <div class="cat-dot"></div>
+    <span class="cat-title">DevOps & Cloud</span>
+    <span class="cat-count">6 logos</span>
+  </div>
+  <div class="logo-grid">
+    <div class="logo-item"><img src="devops/docker.svg" alt="Docker"><div class="logo-name">Docker</div><div class="logo-file">docker.svg</div></div>
+    <div class="logo-item"><img src="devops/kubernetes.svg" alt="Kubernetes"><div class="logo-name">Kubernetes</div><div class="logo-file">kubernetes.svg</div></div>
+    <div class="logo-item"><img src="devops/github-actions.svg" alt="GitHub Actions"><div class="logo-name">GitHub Actions</div><div class="logo-file">github-actions.svg</div></div>
+    <div class="logo-item"><img src="devops/aws.svg" alt="AWS"><div class="logo-name">AWS Cloud</div><div class="logo-file">aws.svg</div></div>
+    <div class="logo-item"><img src="devops/databricks.svg" alt="Databricks"><div class="logo-name">Databricks</div><div class="logo-file">databricks.svg</div></div>
+    <div class="logo-item"><img src="devops/apache-spark.svg" alt="Apache Spark"><div class="logo-name">Apache Spark</div><div class="logo-file">apache-spark.svg</div></div>
+  </div>
+</div>
+
+<!-- Data & ML -->
+<div class="category dataml">
+  <div class="cat-header">
+    <div class="cat-dot"></div>
+    <span class="cat-title">Data & ML</span>
+    <span class="cat-count">9 logos</span>
+  </div>
+  <div class="logo-grid">
+    <div class="logo-item"><img src="data-ml/pandas.svg" alt="Pandas"><div class="logo-name">Pandas</div><div class="logo-file">pandas.svg</div></div>
+    <div class="logo-item"><img src="data-ml/numpy.svg" alt="NumPy"><div class="logo-name">NumPy</div><div class="logo-file">numpy.svg</div></div>
+    <div class="logo-item"><img src="data-ml/scikit-learn.svg" alt="Scikit-learn"><div class="logo-name">Scikit-learn</div><div class="logo-file">scikit-learn.svg</div></div>
+    <div class="logo-item"><img src="data-ml/xgboost.svg" alt="XGBoost"><div class="logo-name">XGBoost</div><div class="logo-file">xgboost.svg</div></div>
+    <div class="logo-item"><img src="data-ml/mlflow.svg" alt="MLflow"><div class="logo-name">MLflow / MLOps</div><div class="logo-file">mlflow.svg</div></div>
+    <div class="logo-item"><img src="data-ml/tableau.svg" alt="Tableau"><div class="logo-name">Tableau</div><div class="logo-file">tableau.svg</div></div>
+    <div class="logo-item"><img src="data-ml/powerbi.svg" alt="Power BI"><div class="logo-name">Power BI</div><div class="logo-file">powerbi.svg</div></div>
+    <div class="logo-item"><img src="data-ml/jupyter.svg" alt="Jupyter"><div class="logo-name">Jupyter Notebooks</div><div class="logo-file">jupyter.svg</div></div>
+    <div class="logo-item"><img src="data-ml/pinecone.svg" alt="Pinecone"><div class="logo-name">Pinecone</div><div class="logo-file">pinecone.svg</div></div>
+  </div>
+</div>
+
+<!-- Frontend & Languages -->
+<div class="category frontend">
+  <div class="cat-header">
+    <div class="cat-dot"></div>
+    <span class="cat-title">Frontend & Languages</span>
+    <span class="cat-count">9 logos</span>
+  </div>
+  <div class="logo-grid">
+    <div class="logo-item"><img src="frontend/react.svg" alt="React"><div class="logo-name">React.js</div><div class="logo-file">react.svg</div></div>
+    <div class="logo-item"><img src="frontend/javascript.svg" alt="JavaScript"><div class="logo-name">JavaScript</div><div class="logo-file">javascript.svg</div></div>
+    <div class="logo-item"><img src="frontend/typescript.svg" alt="TypeScript"><div class="logo-name">TypeScript</div><div class="logo-file">typescript.svg</div></div>
+    <div class="logo-item"><img src="frontend/tailwind.svg" alt="Tailwind"><div class="logo-name">Tailwind CSS</div><div class="logo-file">tailwind.svg</div></div>
+    <div class="logo-item"><img src="frontend/html5.svg" alt="HTML5"><div class="logo-name">HTML5</div><div class="logo-file">html5.svg</div></div>
+    <div class="logo-item"><img src="frontend/css3.svg" alt="CSS3"><div class="logo-name">CSS3</div><div class="logo-file">css3.svg</div></div>
+    <div class="logo-item"><img src="frontend/git.svg" alt="Git"><div class="logo-name">Git</div><div class="logo-file">git.svg</div></div>
+    <div class="logo-item"><img src="frontend/github.svg" alt="GitHub"><div class="logo-name">GitHub</div><div class="logo-file">github.svg</div></div>
+    <div class="logo-item"><img src="frontend/sql.svg" alt="SQL"><div class="logo-name">SQL</div><div class="logo-file">sql.svg</div></div>
+  </div>
+</div>
+
+<!-- Usage Note -->
+<div class="usage-note">
+  <h3>How to use in your React + Tailwind project</h3>
+  <code>&lt;!-- Option 1: Direct SVG import in React --&gt;
+import OpenAILogo from './logos/ai-genai/openai.svg';
+&lt;img src={OpenAILogo} alt="OpenAI" className="w-10 h-10" /&gt;</code>
+  <code>&lt;!-- Option 2: Inline SVG with currentColor for theming --&gt;
+&lt;img src="/logos/ai-genai/openai.svg" 
+     style={{ filter: 'brightness(0) invert(1)' }}  /* white */
+     className="w-8 h-8 opacity-70 hover:opacity-100" /&gt;</code>
+  <code>&lt;!-- Option 3: CSS filter for amber (#F59E0B) tint --&gt;
+filter: brightness(0) saturate(100%) invert(68%) sepia(63%) 
+        saturate(601%) hue-rotate(349deg) brightness(103%) contrast(101%);</code>
+  <p>All logos are SVG — infinitely scalable, theme-able with CSS filters, and under 50KB total.</p>
+</div>
+
+</body>
+</html>
