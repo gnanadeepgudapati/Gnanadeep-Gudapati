@@ -6,6 +6,24 @@ import { TiltWrapper } from '../App';
 
 const API_URL = '/api/chat';
 
+// Renders **bold** and newlines from LLM responses
+function MessageText({ content }) {
+  return (
+    <span>
+      {content.split('\n').map((line, li) => (
+        <span key={li}>
+          {li > 0 && <br />}
+          {line.split(/(\*\*[^*]+\*\*)/).map((chunk, ci) =>
+            chunk.startsWith('**') && chunk.endsWith('**')
+              ? <strong key={ci}>{chunk.slice(2, -2)}</strong>
+              : chunk
+          )}
+        </span>
+      ))}
+    </span>
+  );
+}
+
 const WELCOME_MESSAGE = {
   role: 'assistant',
   content:
@@ -259,7 +277,7 @@ export default function ChatBot() {
                         : 'bg-[#252525] text-[#CFCFCF] rounded-bl-md border border-[#545454]'
                       }`}
                   >
-                    {msg.content}
+                    {msg.role === 'assistant' ? <MessageText content={msg.content} /> : msg.content}
                   </div>
                   {msg.role === 'user' && (
                     <div className="w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5 bg-[rgba(37,37,37,0.5)] border border-[#545454]">
