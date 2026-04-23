@@ -17,6 +17,8 @@ function logo(path) { return BASE + 'logos_/' + path; }
 
 export default function HexBackground() {
   const mountedRef = useRef(false);
+  // For debugging: show errors if Three.js fails to load
+  const [error, setError] = React.useState(null);
 
   useEffect(() => {
     // Guard against double-run in React StrictMode
@@ -25,10 +27,14 @@ export default function HexBackground() {
 
     let animId;
     let renderer;
+    let canvasEl = null;
 
     function initScene() {
       const THREE = window.THREE;
-
+      if (!THREE) {
+        setError('THREE.js not loaded on window.');
+        return () => {};
+      }
       // ── Renderer ──────────────────────────────────
       renderer = new THREE.WebGLRenderer({ antialias: true });
       renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
@@ -40,7 +46,11 @@ export default function HexBackground() {
         zIndex: '0',
         pointerEvents: 'none',
       });
-      document.body.appendChild(renderer.domElement);
+      // Prevent duplicate canvas
+      if (!document.body.contains(renderer.domElement)) {
+        document.body.appendChild(renderer.domElement);
+      }
+      canvasEl = renderer.domElement;
 
       // ── Scene ─────────────────────────────────────
       const scene = new THREE.Scene();
@@ -342,31 +352,52 @@ export default function HexBackground() {
     } else {
       const script = document.createElement('script');
       script.src = '/background/three.min.js';
-      script.onload = () => { cleanup = initScene(); };
+      script.onload = () => {
+        try {
+          cleanup = initScene();
+        } catch (e) {
+          setError('Error initializing Three.js scene: ' + e.message);
+        }
+      };
+      script.onerror = () => {
+        setError('Failed to load /background/three.min.js. Check if the file exists and is accessible.');
+      };
       document.head.appendChild(script);
     }
 
     return () => {
       mountedRef.current = false;
       cleanup();
+      // Remove canvas if it exists
+      if (canvasEl && canvasEl.parentNode) {
+        canvasEl.parentNode.removeChild(canvasEl);
+      }
     };
   }, []);
 
   // The canvas is appended directly to <body> by Three.js — no DOM node needed here.
   // The vignette overlay sits on top at z-index 2 to fade the grid edges.
+  // Show error if present
   return (
-    <div
-      aria-hidden="true"
-      style={{
-        position: 'fixed',
-        inset: 0,
-        zIndex: 2,
-        pointerEvents: 'none',
-        background: [
-          'linear-gradient(to right,  #141413 0%, transparent 18%, transparent 82%, #141413 100%)',
-          'linear-gradient(to bottom, #141413 0%, transparent 22%)',
-        ].join(', '),
-      }}
-    />
+    <>
+      {error && (
+        <div style={{position:'fixed',top:0,left:0,right:0,zIndex:10000,background:'#ff3333',color:'#fff',padding:'8px',fontWeight:'bold',textAlign:'center'}}>
+          3D Background Error: {error}
+        </div>
+      )}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'fixed',
+          inset: 0,
+          zIndex: 2,
+          pointerEvents: 'none',
+          background: [
+            'linear-gradient(to right,  #141413 0%, transparent 18%, transparent 82%, #141413 100%)',
+            'linear-gradient(to bottom, #141413 0%, transparent 22%)',
+          ].join(', '),
+        }}
+      />
+    </>
   );
 }

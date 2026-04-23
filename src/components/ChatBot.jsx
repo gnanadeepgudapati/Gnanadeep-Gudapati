@@ -4,7 +4,7 @@ import { X, Send, Bot, User, Loader2 } from 'lucide-react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { TiltWrapper } from '../App';
 
-const API_URL = import.meta.env.VITE_CHAT_API_URL || 'http://localhost:3001';
+const API_URL = '/api/chat';
 
 const WELCOME_MESSAGE = {
   role: 'assistant',
@@ -152,7 +152,7 @@ export default function ChatBot() {
         .filter((_, i) => i > 0)
         .map(({ role, content }) => ({ role, content }));
 
-      const res = await fetch(`${API_URL}/api/chat`, {
+      const res = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: apiMessages }),
