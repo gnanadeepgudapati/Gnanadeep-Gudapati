@@ -43,9 +43,9 @@ const NAV_LINKS = ['About', 'Education', 'Projects', 'Skills', 'Contact'];
 const ROLES = ['RAG Systems', 'LLM Agents', 'AI Pipelines', 'Full-Stack Apps'];
 
 const TECH_STACK = [
-  'React', 'Python', 'LangChain', 'FastAPI', 'RAG', 'LLMs',
+  'Python', 'LangChain', 'FastAPI', 'RAG', 'LLMs',
   'AWS', 'PyTorch', 'Docker', 'PostgreSQL', 'Pinecone', 'Redis',
-  'GPT-4', 'Claude', 'MCP', 'Elasticsearch', 'Tailwind', 'Node.js',
+  'GPT-4', 'Claude', 'MCP', 'Elasticsearch', 'Node.js', 'Databricks',
 ];
 
 const GITHUB = 'https://github.com/gnanadeepgudapati';
@@ -83,7 +83,7 @@ const PROJECTS = [
     title: 'AI Agent Framework',
     subtitle: 'Model Context Protocol Framework',
     description:
-      'Existing agent frameworks lacked plug-and-play flexibility for enterprise routing. Built a modular framework on MCP with dynamic tool registration, multi-turn context management, and seamless Claude / GPT-4 integration — routing queries to HR, IT, and Facilities services automatically.',
+      'Existing agent frameworks lacked plug-and-play flexibility for enterprise routing. Built a modular MCP-based framework with dynamic tool registration, multi-turn context management, and Claude API integration — routing queries to HR, IT, and Facilities services automatically with GPT-4 as a fallback model.',
     tags: ['Python', 'MCP', 'Claude API', 'LangChain', 'FastAPI', 'Redis'],
     accentColor: '#FB923C',
     icon: FaMicrochip,
@@ -218,21 +218,6 @@ const SKILL_CATEGORIES = [
       'Pandas / NumPy',
       'Tableau / Power BI',
       'MLOps / MLflow',
-    ],
-  },
-  {
-    category: 'Frontend & Languages',
-    icon: FaCode,
-    accent: '#FB923C',
-    skills: [
-      'React.js',
-      'JavaScript / TypeScript',
-      'Python',
-      'SQL',
-      'Tailwind CSS',
-      'HTML5 / CSS3',
-      'Git / GitHub',
-      'Jupyter Notebooks',
     ],
   },
 ];
@@ -490,10 +475,10 @@ const Hero = () => {
             <motion.div variants={fadeInUp} className="mb-5">
               <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#252525]/80 border border-[#252525]/60 text-sm text-[#CFCFCF] font-medium">
                 <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#545454] opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#252525]" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FB923C] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#FB923C]" />
                 </span>
-                Available for Summer 2026 Internships
+                Open for Full-Time & Intern Positions
               </span>
             </motion.div>
 
