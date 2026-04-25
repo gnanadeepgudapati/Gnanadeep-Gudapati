@@ -456,8 +456,10 @@ const Hero = () => {
             className="w-full h-auto max-h-[85vh] object-cover filter"
             style={{
               clipPath: 'inset(0 4% 18% 0)',
-              maskImage: 'linear-gradient(to bottom, black 60%, transparent 82%)',
-              WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 82%)',
+              maskImage: 'linear-gradient(to left, transparent 0%, black 20%), linear-gradient(to bottom, black 60%, transparent 82%)',
+              WebkitMaskImage: 'linear-gradient(to left, transparent 0%, black 20%), linear-gradient(to bottom, black 60%, transparent 82%)',
+              maskComposite: 'intersect',
+              WebkitMaskComposite: 'source-in',
             }}
           />
         </TiltWrapper>
@@ -602,8 +604,10 @@ const Hero = () => {
                 className="w-full rounded-4xl object-cover filter"
                 style={{
                   clipPath: 'inset(0 4% 18% 0)',
-                  maskImage: 'linear-gradient(to bottom, black 60%, transparent 82%)',
-                  WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 82%)',
+                  maskImage: 'linear-gradient(to left, transparent 0%, black 20%), linear-gradient(to bottom, black 60%, transparent 82%)',
+                  WebkitMaskImage: 'linear-gradient(to left, transparent 0%, black 20%), linear-gradient(to bottom, black 60%, transparent 82%)',
+                  maskComposite: 'intersect',
+                  WebkitMaskComposite: 'source-in',
                 }}
               />
             </TiltWrapper>
