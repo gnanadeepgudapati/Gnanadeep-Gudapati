@@ -894,7 +894,7 @@ const Skills = () => {
         <motion.div initial="hidden" animate={inView ? 'visible' : 'hidden'} variants={stagger}>
           <SectionHeader label="Skills" title="Technical Expertise" subtitle="Technologies and tools I work with" />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center max-w-5xl mx-auto">
             {SKILL_CATEGORIES.map((cat) => {
               const Icon = cat.icon;
               return (
