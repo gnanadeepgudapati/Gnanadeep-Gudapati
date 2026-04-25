@@ -453,13 +453,11 @@ const Hero = () => {
           <img
             src="/profile.png"
             alt="Gnanadeep Gudapati"
-            className="w-full h-auto max-h-[85vh] object-cover filter"
+            className="w-full h-auto max-h-[85vh] object-cover"
             style={{
-              clipPath: 'inset(0 4% 18% 0)',
-              maskImage: 'linear-gradient(to left, transparent 0%, black 20%), linear-gradient(to bottom, black 60%, transparent 82%)',
-              WebkitMaskImage: 'linear-gradient(to left, transparent 0%, black 20%), linear-gradient(to bottom, black 60%, transparent 82%)',
-              maskComposite: 'intersect',
-              WebkitMaskComposite: 'source-in',
+              mixBlendMode: 'multiply',
+              maskImage: 'linear-gradient(to bottom, black 60%, transparent 82%)',
+              WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 82%)',
             }}
           />
         </TiltWrapper>
@@ -601,13 +599,11 @@ const Hero = () => {
               <img
                 src="/profile.png"
                 alt="Gnanadeep Gudapati"
-                className="w-full rounded-4xl object-cover filter"
+                className="w-full rounded-4xl object-cover"
                 style={{
-                  clipPath: 'inset(0 4% 18% 0)',
-                  maskImage: 'linear-gradient(to left, transparent 0%, black 20%), linear-gradient(to bottom, black 60%, transparent 82%)',
-                  WebkitMaskImage: 'linear-gradient(to left, transparent 0%, black 20%), linear-gradient(to bottom, black 60%, transparent 82%)',
-                  maskComposite: 'intersect',
-                  WebkitMaskComposite: 'source-in',
+                  mixBlendMode: 'multiply',
+                  maskImage: 'linear-gradient(to bottom, black 60%, transparent 82%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 82%)',
                 }}
               />
             </TiltWrapper>
