@@ -902,12 +902,12 @@ const Skills = () => {
                   <TiltWrapper tiltStrength={15} scale={1.03} className="h-full">
                     <div className="h-full p-6 rounded-2xl bg-[rgba(37,37,37,0.25)] backdrop-blur-sm border border-[#545454] shadow-[0_5px_15px_rgba(0,0,0,0.05)] hover:bg-[rgba(37,37,37,0.25)] hover:shadow-[0_15px_30px_rgba(37,37,37,0.15)] transition-all duration-300 transform-style-3d">
                       <div
-                        className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 transition-colors"
+                        className="w-11 h-11 mx-auto rounded-xl flex items-center justify-center mb-4 transition-colors"
                         style={{ background: `${cat.accent}18`, transform: 'translateZ(20px)' }}
                       >
                         <Icon size={20} style={{ color: cat.accent }} />
                       </div>
-                      <h3 className="font-bold text-[#CFCFCF] mb-3" style={{ transform: 'translateZ(25px)' }}>{cat.category}</h3>
+                      <h3 className="font-bold text-center text-[#CFCFCF] mb-3" style={{ transform: 'translateZ(25px)' }}>{cat.category}</h3>
                       <ul className="space-y-1.5" style={{ transform: 'translateZ(10px)' }}>
                         {cat.skills.map((s) => (
                           <li key={s} className="flex items-start gap-2 text-sm text-[#7D7D7D]">
