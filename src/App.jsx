@@ -455,7 +455,6 @@ const Hero = () => {
             alt="Gnanadeep Gudapati"
             className="w-full h-auto max-h-[85vh] object-cover"
             style={{
-              mixBlendMode: 'multiply',
               maskImage: 'linear-gradient(to bottom, black 60%, transparent 82%)',
               WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 82%)',
             }}
@@ -601,7 +600,6 @@ const Hero = () => {
                 alt="Gnanadeep Gudapati"
                 className="w-full rounded-4xl object-cover"
                 style={{
-                  mixBlendMode: 'multiply',
                   maskImage: 'linear-gradient(to bottom, black 60%, transparent 82%)',
                   WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 82%)',
                 }}
